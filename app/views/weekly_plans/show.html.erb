@@ -1,0 +1,13 @@
+<h1>Weekly Plan for <%= @weekly_plan.week.strftime("%B %d, %Y") %></h1>
+
+<p>Category: <%= @weekly_plan.category %></p>
+<p>Goal: <%= @weekly_plan.goal %></p>
+
+<h2>Tasks</h2>
+<%= render @weekly_plan.tasks, weekly_plan: @weekly_plan %>
+
+<h2>Notes</h2>
+<%= render @weekly_plan.notes %>
+
+<%= link_to "Edit", edit_weekly_plan_path(@weekly_plan), class: "btn btn-secondary" %>
+<%= link_to "Back to Plans", weekly_plans_path, class: "btn btn-link" %>
