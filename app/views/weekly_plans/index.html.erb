@@ -1,0 +1,12 @@
+<h1>Weekly Planner</h1>
+<%= link_to "New Weekly Plan", new_weekly_plan_path, class: "btn btn-primary" %>
+
+<div class="weekly-plans">
+  <% @weekly_plans.each do |plan| %>
+    <div class="weekly-plan">
+      <h2><%= link_to plan.week.strftime("%B %d, %Y"), weekly_plan_path(plan) %></h2>
+      <p>Category: <%= plan.category %></p>
+      <p>Goal: <%= plan.goal %></p>
+    </div>
+  <% end %>
+</div>

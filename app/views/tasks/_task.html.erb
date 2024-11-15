@@ -1,0 +1,9 @@
+<div class="task">
+  <h3><%= task.title %></h3>
+  <p><%= task.description %></p>
+
+  <h4>Sub-Tasks</h4>
+  <%= render task.sub_tasks %>
+
+  <%= link_to "Add Sub-Task", new_weekly_plan_task_sub_task_path(weekly_plan, task), class: "btn btn-link" %>
+</div>

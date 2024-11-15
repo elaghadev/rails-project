@@ -1,0 +1,32 @@
+<div class="container d-flex justify-content-center align-items-center vh-100">
+  <div class="card shadow-lg" style="width: 30rem;">
+    <div class="card-body">
+      <h2 class="card-title text-center mb-4">Login</h2>
+      <%= form_with model: resource, as: resource_name, url: session_path(resource_name), html: { class: "needs-validation" } do |f| %>
+        <div class="mb-3">
+          <%= f.label :email, class: "form-label" %>
+          <%= f.email_field :email, autofocus: true, class: "form-control", required: true %>
+        </div>
+
+        <div class="mb-3">
+          <%= f.label :password, class: "form-label" %>
+          <%= f.password_field :password, autocomplete: "current-password", class: "form-control", required: true %>
+        </div>
+
+        <div class="mb-3 form-check">
+          <%= f.check_box :remember_me, class: "form-check-input" %>
+          <%= f.label :remember_me, class: "form-check-label" %>
+        </div>
+
+        <div class="d-grid">
+          <%= f.submit "Login", class: "btn btn-primary btn-block" %>
+        </div>
+      <% end %>
+
+      <div class="text-center mt-3">
+        <%= link_to "Forgot your password?", new_password_path(resource_name), class: "text-decoration-none" %><br>
+        <%= link_to "Sign up", new_registration_path(resource_name), class: "text-decoration-none" %>
+      </div>
+    </div>
+  </div>
+</div>
